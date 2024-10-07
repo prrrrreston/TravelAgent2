@@ -12,8 +12,8 @@ app.use(cors());
 app.use(express.json());
 app.use(express.static(path.resolve(__dirname, 'build')));
 
-const uri = process.env.ATLAS_URI; //uri is defined from .env file as var "ATLAS_URI"
-mongoose.connect(uri);
+// const uri = process.env.ATLAS_URI; //uri is defined from .env file as var "ATLAS_URI"
+// mongoose.connect(uri);
 const connection = mongoose.connection;
 connection.on('error', error => console.error(error));
 connection.once('open', () => {
