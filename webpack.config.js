@@ -7,7 +7,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'build'),
     filename: 'bundle.js',
-    publicPath: '/',
+    publicPath: '/build/',
   },
   resolve: {
     extensions: ['.js', '.jsx'],
@@ -15,6 +15,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: './react/index.html',
+      publicPath: '/build/'
     }),
     new MiniCssExtractPlugin({
       filename: '[name].[contenthash].css',
@@ -23,7 +24,7 @@ module.exports = {
   devServer: {
     static: {
       directory: path.resolve(__dirname, 'build'),
-      publicPath: '/',
+      publicPath: '/build/',
     },
     proxy: {
       '/travelInfo': {
