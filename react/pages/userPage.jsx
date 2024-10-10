@@ -20,27 +20,27 @@ const notes = [
   { id: 2, note: 'Note2' },
   { id: 3, note: 'Note3' },
 ];
-async function getPastVacations() {
-  const response = await fetch(
-    'http://localhost:3000/api/users/pastvacations',
-    {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        userId: window.localStorage.getItem('user_id'),
-      }),
-    },
-  );
-  const data = await response.json();
-  console.log(data);
-  return data;
-}
+// async function getPastVacations() {
+//   const response = await fetch(
+//     'http://localhost:3000/api/users/pastvacations',
+//     {
+//       method: 'POST',
+//       headers: {
+//         'Content-Type': 'application/json',
+//       },
+//       body: JSON.stringify({
+//         userId: window.localStorage.getItem('user_id'),
+//       }),
+//     },
+//   );
+//   const data = await response.json();
+//   console.log(data);
+//   return data;
+// }
 // function handleLoadClick(data) {
 //   navigate('/display', data);
 // }
-const data = await getPastVacations();
+// const data = await getPastVacations();
 
 const UserPage = props => {
   // const [loc, setLoc] = useState(data.map((elem) => {
