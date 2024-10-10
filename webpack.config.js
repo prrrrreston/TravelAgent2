@@ -14,7 +14,8 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './react/index.html'
+      template: './react/index.html',
+      inject: true
     }),
     new MiniCssExtractPlugin({
       filename: '[name].[contenthash].css',
