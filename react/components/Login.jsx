@@ -1,14 +1,15 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../stylesheet/Signup.scss';
+const apiUrl = process.env.REACT_APP_API_URLç
 
 const Login = props => {
+  console.log(apiUrl);
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   let navigate = useNavigate();
 
   async function handleClick() {
-    console.log('weClicked');
     const response = await fetch('http://localhost:3000/api/users/login', {
       method: 'POST',
       headers: {
