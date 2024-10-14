@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../stylesheet/Signup.scss';
+const apiUrl = process.env.REACT_APP_API_URL;
+
 
 const Signup = props => {
   const [username, setUsername] = useState('');
@@ -9,7 +11,7 @@ const Signup = props => {
   let navigate = useNavigate();
 
   async function handleClick() {
-    const response = await fetch('http://localhost:3000/api/users/signup', {
+    const response = await fetch(`${apiUrl}/api/users/signup`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

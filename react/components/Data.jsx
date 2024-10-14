@@ -2,10 +2,12 @@ import { useDrag } from 'react-dnd';
 import React from 'react';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+const apiUrl = process.env.REACT_APP_API_URL;
+
 
 async function handleDeleteClick(location) {
   const response = await fetch(
-    'http://localhost:3000/api/users/deletevacation',
+    `${apiUrl}/api/users/deletevacation`,
     {
       method: 'POST',
       headers: {

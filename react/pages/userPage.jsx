@@ -14,6 +14,8 @@ import { useDrag } from 'react-dnd';
 import Data from '../components/Data';
 import { useDrop } from 'react-dnd';
 import '../stylesheet/userPage.scss';
+const apiUrl = process.env.REACT_APP_API_URL;
+
 
 const notes = [
   { id: 1, note: 'Note1' },
@@ -22,7 +24,7 @@ const notes = [
 ];
 async function getPastVacations() {
   const response = await fetch(
-    'http://localhost:3000/api/users/pastvacations',
+    `${apiUrl}/api/users/pastvacations`,
     {
       method: 'POST',
       headers: {
@@ -40,7 +42,7 @@ async function getPastVacations() {
 function handleLoadClick(data) {
   navigate('/display', data);
 }
-const data = await getPastVacations();
+// const data = await getPastVacations();
 
 const UserPage = props => {
   // const [loc, setLoc] = useState(data.map((elem) => {

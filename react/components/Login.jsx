@@ -1,16 +1,16 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../stylesheet/Signup.scss';
-const apiUrl = process.env.REACT_APP_API_URLç
+const apiUrl = process.env.REACT_APP_API_URL;
 
 const Login = props => {
-  console.log(apiUrl);
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   let navigate = useNavigate();
 
   async function handleClick() {
-    const response = await fetch('http://localhost:3000/api/users/login', {
+    console.log(`${apiUrl}/api/users/login`)
+    const response = await fetch(`${apiUrl}/api/users/login`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

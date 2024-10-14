@@ -11,6 +11,8 @@ import '../stylesheet/textbox.scss';
 import images from '../components/images.js';
 import voicelines from '../components/voiceLines.js';
 import voiceLines from '../components/voiceLines.js';
+const apiUrl = process.env.REACT_APP_API_URL;
+
 let counter = 0;
 let inputs = [];
 const TextBox = props => {
@@ -167,7 +169,7 @@ const TextBox = props => {
     if (inputs.length === 3) {
       console.log('it worked');
       try {
-        const response = await fetch('http://localhost:3000/travelInfo', {
+        const response = await fetch(`${apiUrl}/travelInfo`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -183,7 +185,7 @@ const TextBox = props => {
           const parsed = await response.json();
           // props.data(parsed);
           const response2 = await fetch(
-            'http://localhost:3000/api/users/update',
+            `${apiUrl}/api/users/update`,
             {
               method: 'POST',
               headers: {
