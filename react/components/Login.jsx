@@ -9,8 +9,6 @@ const Login = props => {
   let navigate = useNavigate();
 
   async function handleClick() {
-    console.log('updated cachee')
-    console.log(`${apiUrl}/api/users/login`)
     const response = await fetch(`${apiUrl}/api/users/login`, {
       method: 'POST',
       headers: {
